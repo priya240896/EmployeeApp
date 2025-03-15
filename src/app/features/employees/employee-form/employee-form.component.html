@@ -1,0 +1,53 @@
+<div class="employee-list-header">
+  <!-- <div *ngIf="!addEmpHeader" class="heading container">
+    <h2 class="employee-list-heading">Employee List</h2>
+  </div> -->
+  <div *ngIf="!employee.id" class="heading container">
+    <h2 class="employee-list-heading">Add Employee Details </h2>   
+</div>
+<div *ngIf="employee.id" class="heading container">
+  <h2 class="employee-list-heading">Edit Employee Details </h2>
+</div>
+</div>
+<div class="employee-form">
+<div *ngIf="employee">
+  <form (submit)="saveEmployee()">
+    <img class="icon" src="assets/icons/usericon.png" alt="User">
+    <input class="input-field" name="name" [(ngModel)]="employee.name" type="text" placeholder="Employee name" />
+
+    <img class="select-icon" src="assets/icons/select.png" alt="select">
+    <div><select class="select-field" name="role" [(ngModel)]="employee.role">
+        <option value="">Select role</option>
+        <option value="Developer">Developer</option>
+        <option value="Designer">Designer</option>
+        <option value="Manager">Manager</option>
+        <option value="QA">QA</option>
+      </select></div>
+    <div class="date">
+      <div class="input-field-date">
+        <div class="backdrop" *ngIf="isDatePickerOpen"></div>
+        <mat-form-field appearance="fill" class="date-input">
+          <img src="assets/icons/date.png" alt="date Icon" class="date-icon" (click)="openJoiningPicker()" />
+          <input matInput name="joiningDate" [matDatepicker]="joiningPicker" class="mat-inputDate" placeholder="Joining Date"
+            [(ngModel)]="employee.joiningDate" [max]="employee.lastDate || today">
+          <mat-datepicker #joiningPicker touchUi="true" (opened)="onDatePickerOpen()"
+            (closed)="onDatePickerClose()"></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <span class="date-diff-arrow ">→</span>
+      <div class="input-field-date">
+        <mat-form-field class="date-input">
+          <img src="assets/icons/date.png" alt="date Icon" class="date-icon" (click)="openLastPicker()" />
+          <input matInput name="lastDate" [matDatepicker]="lastPicker" class="mat-inputDate" [(ngModel)]="employee.lastDate"
+            placeholder="LastDate"  [max]="today">
+          <mat-datepicker #lastPicker touchUi="true" (opened)="onDatePickerOpen()"
+            (closed)="onDatePickerClose()"></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="button-container">
+        <button class="cancel-button" (click)="cancel()">Cancel</button>
+        <button class="save-button"  type="submit" >Save</button>
+      </div>
+    </div>
+  </form>
+</div>

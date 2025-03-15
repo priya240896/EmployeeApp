@@ -1,0 +1,164 @@
+.employee-list {
+  max-width: none;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+.no-employee{
+  position: relative;
+  top:168px;
+  text-align: center;
+}
+
+.employee-list-header {
+  width: 428;
+  height: 60;
+  padding: 16px;
+  background: #1DA1F2;
+  color: #FFFFFF;
+
+}
+
+.employee-list-heading {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+}
+
+.empty-state {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.empty-image {
+  width: 150px;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+li button {
+  position: relative;
+  bottom: 57px;
+  border: none;
+  background: #f9f9f9;
+  align-self: self-end;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.list-display{
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align text to the left */
+  padding: 10px 10px 0px 10px;
+  border-radius: 5px;
+  border-bottom: 1px solid #ddd; 
+}
+.form-modify-buttons{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto; /* Align icons to the right */
+}
+.font-name{
+  font-family: Roboto;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+color: #323238;
+
+}
+.font-role{
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #949C9E;
+  
+}
+
+.list-icon{
+  width: 20px; /* Reduce size */
+  height: 20px;
+  display: inline-block;
+}
+
+.section-title{
+  padding: 16px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #1DA1F2;
+  background: #F2F2F2;
+  text-align: left;
+
+
+}
+
+@media (max-width: 768px) {
+  .employee-list {
+    max-width: 90%;
+  }
+
+  .empty-image {
+    width: 120px;
+  }
+
+  .add-button {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-list {
+    max-width: 95%;
+  }
+
+  .empty-image {
+    width: 100px;
+  }
+
+  .add-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}

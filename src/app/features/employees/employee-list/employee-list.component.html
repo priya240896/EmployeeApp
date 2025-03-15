@@ -1,0 +1,43 @@
+<div class="employee-list-header">
+  <div class="heading container">
+    <h2 class="employee-list-heading">Employee List</h2>
+  </div>
+</div>
+<div *ngIf="(employeeService.employees().length === 0)" class="no-employee">
+  <img src="assets/emptyEmp.png" alt="No data" class="empty-image" />
+  <div *ngIf="(employeeService.employees().length === 0)" class="empty-state">
+    <p>No employee records found</p>
+  </div>
+</div>
+<button class="add-button" (click)="employeeService.navigateToAddEmployee()">+</button>
+<div > 
+
+<div>
+  <h3 class="section-title" *ngIf="employeeService.currentEmployees().length > 0">Current employees</h3>
+  <ul>
+    <li class="list-display" *ngFor="let emp of employeeService.currentEmployees()">
+      <span class="font-name">{{ emp.name }}</span>
+      <span class="font-role">{{ emp.role }}</span>
+      <span class="font-role">From {{emp.joiningDate | date: 'dd MMM, yyyy'}} </span>
+      <div class="form-modify-buttons">
+        <button (click)="editEmployee(emp)"> <img class="list-icon" src="assets/icons/edit.png" alt="edit" /></button>
+        <button (click)="deleteEmployee(emp.id!)"> <img class="list-icon" src="assets/icons/delete.png"
+            alt="Delete" /></button>
+      </div>
+    </li>
+  </ul>
+  <h3 class="section-title" *ngIf="employeeService.previousEmployees().length>0">Previous employees</h3>
+  <ul>
+    <li class="list-display" *ngFor="let emp of employeeService.previousEmployees()">
+      <span class="font-name">{{ emp.name }}</span>
+      <span class="font-role">{{ emp.role }}</span>
+      <span class="font-role">From {{emp.joiningDate | date: 'dd MMM, yyyy'}} - {{emp.lastDate | date: 'dd MMM, yyyy'}}</span>
+      <div class="form-modify-buttons">
+        <button (click)="editEmployee(emp)"> <img class="list-icon" src="assets/icons/edit.png" alt="edit" /></button>
+        <button (click)="deleteEmployee(emp.id!)"> <img class="list-icon" src="assets/icons/delete.png"
+            alt="Delete" /></button>
+      </div>
+    </li>
+  </ul>
+</div>
+</div>

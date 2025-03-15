@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    display: block;
+    margin: 0px;
+}
+.mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+  }
+  
+  .mat-mdc-form-field-outline {
+    display: none !important;
+  }
+  
+  .mat-mdc-text-field-wrapper {
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+  
+  .mat-mdc-form-field-infix {
+    padding-bottom: 0 !important;
+  }
+  
+  .mat-mdc-form-field {
+    background: transparent !important;
+  }
+  .mdc-line-ripple.mdc-line-ripple--deactivating{
+    visibility: hidden;
+    opacity: 0;
+  }
+.mdc-line-ripple.mdc-line-ripple--deactivating::before {
+  visibility: hidden;
+  opacity: 0;
+}
+  .mat-form-field {
+    width: 100% !important;
+  }
+  
+  .mat-mdc-form-field-flex{
+    position: relative;
+    top:3px
+  }
