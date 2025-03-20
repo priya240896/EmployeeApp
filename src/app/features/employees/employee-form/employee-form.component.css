@@ -110,11 +110,7 @@ border: 1px solid #E5E5E5
     border-radius: 5px;
     cursor: pointer;
   }
-  .date-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-  }
+ 
   
   mat-form-field {
     flex-grow: 1;
@@ -194,17 +190,6 @@ border: 1px solid #E5E5E5
         gap: 1rem;
   }
   
-  .date-icon {
-    z-index: 99;
-    top: 8px;
-    right: 10px;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
   .date-diff-arrow {
     color: #2196F3;
@@ -249,57 +234,7 @@ border: 1px solid #E5E5E5
     cursor: pointer;
     font-size: 16px;
   }
-  @media (max-width: 480px)  {
-    .date {
-      width: 46%;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-    }}
-
-      @media (max-width: 480px)  {
-      .date-diff-arrow {
-        color: #2196F3;
-        width: 6%;
-        height: 48px;
-        position: relative;
-        z-index: 99;
-        top: 18px;
-        color: #1DA1F2;
-        font-size:10px;
-      }}
-      .custom-datepicker {
-        position: absolute !important;
-        top: 100% !important; /* Position right below the input */
-        left: 0 !important; /* Align with input field */
-        z-index: 9999 !important; /* Ensure it appears above other elements */
-      }
-
-      ::ng-deep .mdc-line-ripple {
-        display: none !important;  /* Hide the underline */
-      }
-
-      .mat-inputDate{
-        position: relative;
-        bottom: 25px;
-        left: 10px;
-      }   
-
-      ::ng-deep .mat-datepicker-content {
-        border-radius: 12px !important; /* Rounded corners */
-        padding: 15px !important; /* Add spacing inside */
-          background: white !important;
-          color: black !important;
-          border-radius: 8px !important;
-      }
-      
-      /* Today's Date */
-      ::ng-deep .mat-calendar-body-today {
-        border: 2px solid #3b82f6 !important;
-        border-radius: 50% !important;
-      }
-      
-
+  
       /* Grey Background Overlay */
 .backdrop {
   position: fixed;
