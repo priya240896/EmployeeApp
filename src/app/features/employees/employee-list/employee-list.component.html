@@ -15,7 +15,13 @@
 <div>
   <h3 class="section-title" *ngIf="employeeService.currentEmployees().length > 0">Current employees</h3>
   <ul>
-    <li class="list-display" *ngFor="let emp of employeeService.currentEmployees()">
+    <li class="list-display" *ngFor="let emp of employeeService.currentEmployees()"
+    (mousedown)="onSwipeStart($event, emp.id!)"
+      (mousemove)="onSwipeMove($event, emp.id!)"
+      (mouseup)="onSwipeEnd($event, emp.id!)"
+      (touchstart)="onSwipeStart($event, emp.id!)"
+      (touchmove)="onSwipeMove($event, emp.id!)"
+      (touchend)="onSwipeEnd($event, emp.id!)"> 
       <span class="font-name">{{ emp.name }}</span>
       <span class="font-role">{{ emp.role }}</span>
       <span class="font-role">From {{emp.joiningDate | date: 'dd MMM, yyyy'}} </span>
@@ -28,7 +34,13 @@
   </ul>
   <h3 class="section-title" *ngIf="employeeService.previousEmployees().length>0">Previous employees</h3>
   <ul>
-    <li class="list-display" *ngFor="let emp of employeeService.previousEmployees()">
+    <li class="list-display" *ngFor="let emp of employeeService.previousEmployees()"
+    (mousedown)="onSwipeStart($event, emp.id!)"
+      (mousemove)="onSwipeMove($event, emp.id!)"
+      (mouseup)="onSwipeEnd($event, emp.id!)"
+      (touchstart)="onSwipeStart($event, emp.id!)"
+      (touchmove)="onSwipeMove($event, emp.id!)"
+      (touchend)="onSwipeEnd($event, emp.id!)">
       <span class="font-name">{{ emp.name }}</span>
       <span class="font-role">{{ emp.role }}</span>
       <span class="font-role">From {{emp.joiningDate | date: 'dd MMM, yyyy'}} - {{emp.lastDate | date: 'dd MMM, yyyy'}}</span>

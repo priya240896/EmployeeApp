@@ -28,9 +28,6 @@ import { CustomDatePickerComponent } from '../custom-date-picker/custom-date-pic
 })
 
 export class EmployeeFormComponent {
-  // @Input() employee: Employee = { id: undefined, name: '', role: '', joiningDate: '',lastDate:'' };
-  // @Output() save = new EventEmitter<Employee>();
-  // @Output() cancel = new EventEmitter<void>();
   employee: Employee = { name: '', role: '', joiningDate: '', lastDate: '' };
   isEditMode = false;
 
@@ -43,6 +40,7 @@ export class EmployeeFormComponent {
   @ViewChild('lastPicker') lastPicker!: MatDatepicker<Date>;
   today: string = new Date().toISOString().split('T')[0]; // Gets today's date in YYYY-MM-DD format
   minStartDate = new Date();
+  minDate: Date | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -83,20 +81,20 @@ export class EmployeeFormComponent {
 
 
   onDateSelected(event: any) {
-    console.log('Received event:', event, typeof event); // Debugging log
+    console.log('Received event:', event, typeof event); 
   
     if (event instanceof Date) {
-      this.handleStartDateChange(event);
+      this.handleJoinningDateChange(event);
     } else {
       console.error('Error: Expected Date but got:', event);
     }
   }
  
-  handleStartDateChange(date: Date) {
-    this.employee.joiningDate = date.toISOString().split('T')[0]; // Convert Date to string
+  handleJoinningDateChange(date: Date) {
+    this.employee.joiningDate = date.toISOString().split('T')[0]; 
   }
   onLastDateSelected(event: any) {
-    console.log('Received event for Last Date:', event, typeof event); // Debugging log
+    console.log('Received event for Last Date:', event, typeof event); 
   
     if (event instanceof Date) {
       this.handleLastDateChange(event);
@@ -106,7 +104,7 @@ export class EmployeeFormComponent {
   }
   
   handleLastDateChange(date: Date) {
-    this.employee.lastDate = date.toISOString().split('T')[0]; // Convert Date to string
+    this.employee.lastDate = date.toISOString().split('T')[0]; 
   }
 
   

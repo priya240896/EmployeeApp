@@ -1,7 +1,4 @@
 <div class="employee-list-header">
-  <!-- <div *ngIf="!addEmpHeader" class="heading container">
-    <h2 class="employee-list-heading">Employee List</h2>
-  </div> -->
   <div *ngIf="!employee.id" class="heading container">
     <h2 class="employee-list-heading">Add Employee Details </h2>   
 </div>
@@ -26,31 +23,15 @@
     <div class="date">
       <div class="input-field-date">
         <div class="backdrop" *ngIf="isDatePickerOpen"></div>
-        <!-- <mat-form-field appearance="fill" class="date-input">
-
-          <img src="assets/icons/date.png" alt="date Icon" class="date-icon" (click)="openJoiningPicker()" />
-          <input matInput name="joiningDate" [matDatepicker]="joiningPicker" class="mat-inputDate" placeholder="Joining Date"
-            [(ngModel)]="employee.joiningDate" [max]="employee.lastDate || today">
-          <mat-datepicker #joiningPicker touchUi="true" (opened)="onDatePickerOpen()"
-            (closed)="onDatePickerClose()"></mat-datepicker>
-        </mat-form-field> --> 
         <app-custom-date-picker
         [selectedDate]="formattedJoiningDate" 
-        [minDate]="minStartDate"
+        [minDate]="minDate"
         [isEndDatePicker]="false"
         (dateChange)="onDateSelected($event)">
       </app-custom-date-picker>
       </div>
       <span class="date-diff-arrow ">→</span>
       <div class="input-field-date">
-        <!-- <mat-form-field class="date-input">
-          
-          <img src="assets/icons/date.png" alt="date Icon" class="date-icon" (click)="openLastPicker()" />
-          <input matInput name="lastDate" [matDatepicker]="lastPicker" class="mat-inputDate" [(ngModel)]="employee.lastDate"
-            placeholder="LastDate"  [max]="today">
-          <mat-datepicker #lastPicker touchUi="true" (opened)="onDatePickerOpen()"
-            (closed)="onDatePickerClose()"></mat-datepicker>
-        </mat-form-field> -->
         <app-custom-date-picker
         [selectedDate]="formattedLastDate"
         [minDate]="getMinLastDate()"

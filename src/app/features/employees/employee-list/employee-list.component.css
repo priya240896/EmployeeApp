@@ -80,8 +80,8 @@ li button {
 }
 .list-display{
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align text to the left */
+  flex-direction: column; 
+  align-items: flex-start; 
   padding: 10px 10px 0px 10px;
   border-radius: 5px;
   border-bottom: 1px solid #ddd; 
@@ -90,7 +90,7 @@ li button {
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-left: auto; /* Align icons to the right */
+  margin-left: auto; 
 }
 .font-name{
   font-family: Roboto;
@@ -112,7 +112,7 @@ color: #323238;
 }
 
 .list-icon{
-  width: 20px; /* Reduce size */
+  width: 20px; 
   height: 20px;
   display: inline-block;
 }
@@ -161,4 +161,15 @@ color: #323238;
     height: 40px;
     font-size: 18px;
   }
+}
+.list-display {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-out;
+  will-change: transform;
 }
