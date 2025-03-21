@@ -294,6 +294,16 @@ border: 1px solid #E5E5E5
   font-size: 12px;
   margin-top: 4px;
 }
-  
+@media screen and (max-width: 390px) and (max-height: 844px)  {
+.button-container {
+  position: fixed;
+  bottom: 110px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+}}
  
   
