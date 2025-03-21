@@ -280,3 +280,10 @@
   overflow: visible;
   border: 1px solid #e6e6fa;
 }}
+
+@supports (-ms-ime-align: auto) {
+  /* Windows-specific styles */
+  .date-icon {
+    margin-right: 37px;
+  }
+}
